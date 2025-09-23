@@ -393,11 +393,11 @@ export default function Home() {
               {[
                 {
                   name: "Starter",
-                  price: "₹50,000",
+                  price: "₹15,000",
                   period: "per campaign",
                   description: "Perfect for small brands testing influencer marketing",
                   features: [
-                    "3 verified micro-influencers",
+                    "2 verified micro-influencers",
                     "Basic campaign management",
                     "Performance analytics",
                     "Email support",
@@ -408,7 +408,7 @@ export default function Home() {
                 },
                 {
                   name: "Professional",
-                  price: "₹1,50,000",
+                  price: "₹1,00,000",
                   period: "per campaign",
                   description: "Ideal for growing brands seeking measurable ROI",
                   features: [
@@ -541,73 +541,7 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Video Demo Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-20 text-center"
-          >
-            <h3 className="text-3xl sm:text-4xl font-light text-white mb-6">
-              See Our Platform in Action
-            </h3>
-            <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
-              Watch a 2-minute walkthrough of our dashboard and see how easy it is to launch your first campaign
-            </p>
 
-            <div className="max-w-4xl mx-auto">
-              <div className="relative bg-slate-800/80 rounded-lg border border-slate-700 p-8 hover:border-emerald-500/50 transition-all duration-300">
-                <div className="aspect-video bg-slate-900 rounded-lg flex items-center justify-center relative overflow-hidden">
-                  {/* Video Placeholder */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-20 h-20 rounded-full bg-emerald-500 flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform cursor-pointer">
-                      <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
-                    <h4 className="text-xl font-medium text-white mb-2">Platform Demo Video</h4>
-                    <p className="text-slate-300">Click to watch our 2-minute platform walkthrough</p>
-                  </div>
-
-                  {/* Demo Screenshots Overlay */}
-                  <div className="absolute inset-4 grid grid-cols-3 gap-2 opacity-20">
-                    <div className="bg-emerald-500/30 rounded"></div>
-                    <div className="bg-slate-600/30 rounded"></div>
-                    <div className="bg-emerald-500/30 rounded"></div>
-                    <div className="bg-slate-600/30 rounded"></div>
-                    <div className="bg-emerald-500/30 rounded"></div>
-                    <div className="bg-slate-600/30 rounded"></div>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                  <div className="text-center">
-                    <div className="text-emerald-400 font-semibold">Dashboard Overview</div>
-                    <div className="text-slate-400">Campaign management interface</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-emerald-400 font-semibold">Influencer Discovery</div>
-                    <div className="text-slate-400">AI-powered matching system</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-emerald-400 font-semibold">Analytics & Reporting</div>
-                    <div className="text-slate-400">Real-time performance tracking</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <Button
-                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-8 py-3 text-lg"
-              >
-                Request Live Demo
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
 
