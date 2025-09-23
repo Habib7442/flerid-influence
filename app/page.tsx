@@ -16,7 +16,13 @@ import {
   Star,
   Award,
   Target,
-  Zap
+  Zap,
+  Smartphone,
+  Search,
+  UserCheck,
+  MessageSquare,
+  BarChart3,
+  Trophy
 } from "lucide-react";
 
 export default function Home() {
@@ -214,7 +220,7 @@ export default function Home() {
                   className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-8 py-3 text-base relative overflow-hidden group"
                 >
                   <span className="relative z-10 flex items-center">
-                    <span className="mr-2 group-hover:animate-pulse">📱</span>
+                    <Smartphone className="mr-2 h-5 w-5 group-hover:animate-pulse" />
                     Get Your Brand Connected
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-emerald-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -257,6 +263,9 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:bg-slate-800/70"
               >
+                <div className="w-12 h-12 rounded-lg bg-emerald-500 flex items-center justify-center mx-auto mb-4">
+                  <Trophy className="h-6 w-6 text-white" />
+                </div>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0 }}
@@ -272,6 +281,9 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:bg-slate-800/70"
               >
+                <div className="w-12 h-12 rounded-lg bg-emerald-500 flex items-center justify-center mx-auto mb-4">
+                  <Shield className="h-6 w-6 text-white" />
+                </div>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
@@ -287,6 +299,9 @@ export default function Home() {
                 transition={{ type: "spring", stiffness: 300 }}
                 className="text-center p-6 bg-slate-800/50 rounded-lg border border-slate-700 hover:bg-slate-800/70"
               >
+                <div className="w-12 h-12 rounded-lg bg-emerald-500 flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-6 w-6 text-white" />
+                </div>
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Infinity, delay: 1 }}
@@ -508,33 +523,39 @@ export default function Home() {
               {
                 step: "01",
                 title: "Discovery",
-                description: "We identify perfect brand-influencer matches based on audience, values, and campaign goals"
+                description: "We identify perfect brand-influencer matches based on audience, values, and campaign goals",
+                icon: Search
               },
               {
                 step: "02",
                 title: "Screening",
-                description: "Comprehensive background checks, engagement audits, and authenticity verification"
+                description: "Comprehensive background checks, engagement audits, and authenticity verification",
+                icon: UserCheck
               },
               {
                 step: "03",
                 title: "Introduction",
-                description: "Personalized introductions with campaign briefs and collaboration frameworks"
+                description: "Personalized introductions with campaign briefs and collaboration frameworks",
+                icon: MessageSquare
               },
               {
                 step: "04",
                 title: "Management",
-                description: "End-to-end campaign support, from negotiation to content approval to performance tracking"
+                description: "End-to-end campaign support, from negotiation to content approval to performance tracking",
+                icon: Users
               },
               {
                 step: "05",
                 title: "Results",
-                description: "Detailed analytics and ROI reporting for every collaboration"
+                description: "Detailed analytics and ROI reporting for every collaboration",
+                icon: BarChart3
               }
             ].map((item, index) => (
               <div key={index} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-xl mb-6 mx-auto hover:scale-110 transition-transform">
-                  {item.step}
+                <div className="w-16 h-16 rounded-full bg-emerald-500 flex items-center justify-center text-white mb-6 mx-auto hover:scale-110 transition-transform">
+                  <item.icon className="h-8 w-8" />
                 </div>
+                <div className="text-xs text-emerald-400 font-semibold mb-2">{item.step}</div>
                 <h3 className="text-xl font-medium mb-4 text-white">{item.title}</h3>
                 <p className="text-slate-300 text-sm leading-relaxed">{item.description}</p>
               </div>
