@@ -504,55 +504,7 @@ export default function Home() {
             </div>
           </motion.div>
 
-          {/* Team Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h3 className="text-3xl font-light text-white text-center mb-12">Our Expert Team</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-              {[
-                {
-                  name: "Arjun Sharma",
-                  role: "Founder & CEO",
-                  expertise: "Digital Marketing Strategy",
-                  description: "10+ years in digital marketing and influencer partnerships",
-                  image: "AS"
-                },
-                {
-                  name: "Priya Patel",
-                  role: "Head of Influencer Relations",
-                  expertise: "Community Management",
-                  description: "Expert in building authentic creator relationships",
-                  image: "PP"
-                },
-                {
-                  name: "Rohit Kumar",
-                  role: "Analytics Director",
-                  expertise: "Data Science & ROI Optimization",
-                  description: "Specialist in campaign performance and ROI measurement",
-                  image: "RK"
-                }
-              ].map((member, index) => (
-                <Card key={index} className="bg-slate-800/80 border-slate-700 hover:border-emerald-500/50 transition-all duration-300 text-center">
-                  <CardHeader className="p-8">
-                    <div className="w-20 h-20 rounded-full bg-emerald-500 flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
-                      {member.image}
-                    </div>
-                    <CardTitle className="text-xl text-white mb-2">{member.name}</CardTitle>
-                    <div className="text-emerald-400 font-medium mb-2">{member.role}</div>
-                    <div className="text-sm text-slate-400 mb-4">{member.expertise}</div>
-                    <CardDescription className="text-slate-300 text-sm">
-                      {member.description}
-                    </CardDescription>
-                  </CardHeader>
-                </Card>
-              ))}
-            </div>
-          </motion.div>
+
 
           {/* Certifications & Trust Elements */}
           <motion.div
