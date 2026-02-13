@@ -1,27 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
+import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
-  title: "Flerid Influence - Premium Influencer Marketing Platform",
-  description: "The new purpose-built platform to harness authentic influence. Connect with verified influencers for guaranteed ROI and zero fake followers. Transform your brand with authentic partnerships.",
-  keywords: "influencer marketing, authentic influencers, brand partnerships, ROI marketing, social media marketing, content creators, digital marketing platform",
+  title: "Flerid Influence — Authentic Influencer Marketing | 11x ROI",
+  description:
+    "Flerid Influence connects brands with human-verified creators to deliver measurable growth. Manual verification, ROI-focused campaigns, and fast launches.",
+  keywords:
+    "influencer marketing, authentic creators, ROI marketing, verified influencers, creator campaigns, brand partnerships",
   authors: [{ name: "Flerid Technologies" }],
   creator: "Flerid Technologies",
   publisher: "Flerid Influence",
   openGraph: {
-    title: "Flerid Influence - Premium Influencer Marketing Platform",
-    description: "The new purpose-built platform to harness authentic influence for real results.",
+    title: "Flerid Influence — Authentic Influencer Marketing | 11x ROI",
+    description:
+      "Human-verified creators and measurable influencer campaigns designed for real results.",
     url: "https://influence.flerid.com",
     siteName: "Flerid Influence",
     type: "website",
@@ -29,8 +35,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flerid Influence - Premium Influencer Marketing Platform",
-    description: "Transform your brand with authentic influencer partnerships. Zero fake followers guaranteed.",
+    title: "Flerid Influence — Authentic Influencer Marketing | 11x ROI",
+    description:
+      "Transform your brand with authentic influencer partnerships and measurable ROI.",
     creator: "@fleridtech",
   },
   robots: {
@@ -44,9 +51,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-  },
 };
 
 export default function RootLayout({
@@ -55,10 +59,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
+        <Script
+          id="theme-init"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(() => {
+  const stored = localStorage.getItem("theme");
+  const theme = stored === "light" || stored === "dark" ? stored : "dark";
+  document.documentElement.dataset.theme = theme;
+})();`,
+          }}
+        />
         {children}
       </body>
     </html>
