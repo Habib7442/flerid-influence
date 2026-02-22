@@ -16,11 +16,12 @@ export default function ContactPage() {
     const formData = new FormData(formElement);
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
     const brand = String(formData.get("brand") || "").trim();
     const budget = String(formData.get("budget") || "").trim();
     const objectives = String(formData.get("objectives") || "").trim();
 
-    if (!name || !email || !brand || !budget || !objectives) {
+    if (!name || !email || !phone || !brand || !budget || !objectives) {
       setSubmitError("Please fill in all required fields.");
       setSubmitSuccess(null);
       return;
@@ -34,12 +35,15 @@ export default function ContactPage() {
     setSubmitError(null);
     setSubmitSuccess(null);
     try {
+      const briefWithPhone = phone
+        ? `Phone: ${phone}\n\n${objectives}`
+        : objectives;
       const { error } = await supabase.from("contact_requests").insert({
         name,
         email,
         brand,
         budget,
-        brief: objectives,
+        brief: briefWithPhone,
         source: "contact_page",
       });
       if (error) {
@@ -95,6 +99,14 @@ export default function ContactPage() {
                   className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-subtle)]"
                   placeholder="Email"
                   type="email"
+                  required
+                />
+                <input
+                  name="phone"
+                  autoComplete="tel"
+                  className="rounded-xl border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-text)] placeholder:text-[var(--color-text-subtle)]"
+                  placeholder="Phone number"
+                  type="tel"
                   required
                 />
                 <input
