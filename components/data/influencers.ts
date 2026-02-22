@@ -28,7 +28,7 @@ export const influencers: Influencer[] = [
     reach: "120,000+",
     engagement: "2.5% – 5%",
     audienceFrom: "Silchar, Assam, India",
-    image: `${supabaseBase}nazia.jpg`,
+    image: `${supabaseBase}nazia.png`,
   },
   {
     name: "ABHI SINHA VLOGS",
